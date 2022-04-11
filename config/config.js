@@ -1,0 +1,1 @@
+module.exports.secret = 'M1-m!dd13w4r3';
