@@ -9,6 +9,6 @@ api.get('/user', validationAuthenticator, userController.getUser);
 api.post('/user/', userController.addUser);
 api.delete('/user/', [validationAuthenticator, adminValidation], userController.deleteUser);
 api.put('/user/:upd_id', validationAuthenticator, userController.updateUser);
-api.post('/login', userController.login);
+api.post('/login', userController.loginUser);
 
 module.export = api;
