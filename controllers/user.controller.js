@@ -12,7 +12,7 @@ async function addUser(req, res){
         req.body.password = await bcrypt.hash(req.body.password, salt);
         let newUser = new User(req.body);
         await newUser.save()
-        res.send(msg: {usuarioNuevo : newUser})
+        res.send({usuarioNuevo : newUser})
     } catch(error){
         res.status(404).send(error)
     }

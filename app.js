@@ -1,11 +1,11 @@
 let express = require('express');
 let app = express();
 let user_routes = require('./routes/user.routes');
-let menu_routes = requiere('./routes/menu.routes');
+let menu_routes = require('./routes/menu.routes');
 let cors = require('cors')
 
 app.use(cors());
-app.use(express());
+app.use(express.json());
 app.use(express.urlencoded({extended: true}));
 
 app.use('/api',[

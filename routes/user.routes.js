@@ -2,7 +2,7 @@ var express = require('express');
 var api = express.Router();
 var userController = require('../controllers/user.controller');
 const validationAuthenticator  = require('../middlewares/authentication');
-const adminValidation = require ('../middlewares/adminValidation');
+const adminValidation = require('../middlewares/adminValidation');
 
 api.get('/users', validationAuthenticator, userController.getUsers);
 api.get('/user', validationAuthenticator, userController.getUser);

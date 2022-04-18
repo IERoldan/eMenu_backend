@@ -1,7 +1,7 @@
 const secret = require('../config/config').secret;
 const jwt = require('jsonwebtoken');
 
-const validationAuthenticator = (req, res, next) =>{
+const validationAuthenticator = (req, res, next) => {
     const token = req.headers.authorization;
     jwt.verify(token, secret, (error, jwtdecoded)=>{
         if(error) return res.status(400).send({
