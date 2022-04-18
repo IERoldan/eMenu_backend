@@ -7,7 +7,7 @@ var MenuSchema = new Schema({
     price: {type:Number, min:0, max:10000, required:true},
     description: {type:String, required:true, maxlength:300},
     category: {type:String, ref:'Category'},
-    picture:{type:Image, required: true,},
+    // picture:{type:, required: true,},
 });
 
 module.exports = mongoose.model('Menu', MenuSchema);
