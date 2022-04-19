@@ -11,4 +11,4 @@ api.delete('/user/', [validationAuthenticator, adminValidation], userController.
 api.put('/user/:upd_id', validationAuthenticator, userController.updateUser);
 api.post('/login', userController.loginUser);
 
-module.export = api;
+module.exports = api;

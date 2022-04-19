@@ -10,4 +10,4 @@ api.post('/menu/', menuController.addMenu);
 api.delete('/menu/', [validationAuthenticator, adminValidation], menuController.deleteMenu);
 api.put('/menu/:upd_id', validationAuthenticator, menuController.updateMenu);
 
-module.export = api;
+module.exports = api;
