@@ -2,7 +2,6 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var rolesValidos = [
-    'SUPER_ADMIN_ROLE',
     'ADMIN_ROLE',
     'CLIENT_ROLE',
 ];

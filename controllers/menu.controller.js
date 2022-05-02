@@ -1,8 +1,5 @@
 const Menu = require('../schemas/menu.schema');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const secret = require('../config/config').secret;
-const salt = 10;
+
 
 async function addMenu(req, res){
     try{
@@ -37,7 +34,7 @@ async function deleteMenu(req, res){
     const MenuIdDelete = req.query.menu_id_delete;
     const menuDelete = await Menu.findByIdAndDelete(MenuIdDelete);
     if (!menuDelete) return res.status(404).send({msg: 'No se encontro el menú que desea eliminar'})
-    return res.status(200).send({ msg:`El menú ${menuDelete.email} ha sido eliminado exitosamente`})
+    return res.status(200).send({ msg:`El menú ${menuDelete.title} ha sido eliminado exitosamente`})
 }
 
 async function updateMenu(req, res){

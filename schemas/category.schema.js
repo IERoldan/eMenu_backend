@@ -7,7 +7,7 @@ var categoriasValidas = [
     'Bebidas',
 ];
 var CategorySchema = new Schema({
-    name: {type: String, required:true, maxlength:40, enum: categoriasValidas,},
+    name: {type: String, required:true, maxlength:40, enum: categoriasValidas, unique:true},
     status:{type:Boolean, default:false, required:true},
     picture:{type:String, required: true,},
 })

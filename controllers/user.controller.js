@@ -44,7 +44,7 @@ async function deleteUser(req, res){
 async function updateUser(req, res){
     const id = req.params.upd_id;
     const userChanges = req.body;
-    const updatedUser = await user.findbyIdUpdate(id, userChanges, {new:true});
+    const updatedUser = await user.findByIdAndUpdate(id, userChanges, {new:true});
     if (!updatedUser) return res.status(404).send({ msg:'No se encuentra el usuario que deseas modificar'})
     return res.status(200).send(updatedUser);
 };

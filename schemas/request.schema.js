@@ -3,7 +3,7 @@ var Schema = mongoose.Schema;
 
 var RequestSchema = new Schema({
     userID:{type:String, ref:'User',required:true,},
-    createdAt: { type: Date, required: true, default: Date.now },
+    createdAt: { type: Number, required: true, default: parseInt(new Date().getTime()/1000)},
     menu:{type:String, ref:'Menu', required: true},
     picture:{type:String, ref:'Menu', required: true},
     state:{type:Boolean, ref:'Menu', required:true},

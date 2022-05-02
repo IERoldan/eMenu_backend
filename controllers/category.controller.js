@@ -1,8 +1,5 @@
 const Category = require('../schemas/category.schema');
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcrypt');
-const secret = require('../config/config').secret;
-const salt = 10;
+
 
 async function addCategory(req, res){
     try{
