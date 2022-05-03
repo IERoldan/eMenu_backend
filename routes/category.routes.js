@@ -10,4 +10,4 @@ api.post('/category/', [validationAuthenticator, adminValidation], categoryContr
 api.delete('/category/', [validationAuthenticator, adminValidation], categoryController.deleteCategory);
 api.put('/category/:upd_id', validationAuthenticator, categoryController.updateCategory);
 
-module.exports = api;
+module.exports = api;   
