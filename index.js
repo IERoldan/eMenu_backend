@@ -1,5 +1,5 @@
 var app = require('./app')
-var port = 3100;
+var port = process.env.PORT || 3100;
 const password = 'P4n4m4-1';
 var URL = `mongodb+srv://IRoldan:${password}@emenudb.93rzu.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`;
 var mongoose = require('mongoose');
