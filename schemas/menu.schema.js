@@ -6,7 +6,7 @@ var MenuSchema = new Schema({
     status:{type:Boolean, default:false, required:true},
     price: {type:Number, min:0, max:10000, required:true},
     description: {type:String, required:true, maxlength:300},
-    category: {type:String, ref:'Category'},
+    category: {type:String, ref:'Category', required:true},
     picture:{type:String, required: true,},
 });
 
