@@ -16,7 +16,7 @@ async function addCategory(req, res){
 
 async function getCategories(req, res) {
     const categoriesDB= await Category.find();
-    res.send({
+    return res.json({
        categories: categoriesDB,
     })
 };
