@@ -16,9 +16,7 @@ async function addMenu(req, res){
 
 async function getMenus(req, res) {
     const menusDB= await Menu.find();
-    res.send({
-       users: menusDB,
-    })
+    return res.json({menusDB})
 };
 
 async function getMenu(req, res){
