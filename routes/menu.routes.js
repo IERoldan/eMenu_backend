@@ -8,6 +8,6 @@ api.get('/menus', menuController.getMenus);
 api.get('/menu', menuController.getMenu);
 api.post('/menu/', menuController.addMenu);
 api.delete('/menu/:_id', menuController.deleteMenu);
-api.put('/menu/:upd_id', validationAuthenticator, menuController.updateMenu);
+api.put('/menu/:_id',  menuController.updateMenu);
 
 module.exports = api;

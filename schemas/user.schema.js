@@ -14,7 +14,7 @@ var UserSchema = new Schema({
         },
         message: "Por favor ingrese un email válido"
     },},
-    password: {type:String},
+    password: {type:String },
     status:{type:Boolean, default:false},
     role:{type:String, required: true, default:'CLIENT_ROLE', enum: rolesValidos},
 })
