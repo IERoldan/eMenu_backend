@@ -4,7 +4,7 @@ const Menu = require('../schemas/menu.schema');
 async function addMenu(req, res){
     try{
         if(!req.body.title || !req.body.description || !req.body.price) {
-            return res.status(400).send({error:'Falta un campo obligatorio'})
+            return res.status(400).send({error:'something is missing'})
         }
         let newMenu = new Menu(req.body);
         await newMenu.save();
@@ -22,7 +22,7 @@ async function getMenus(req, res) {
 async function getMenu(req, res){
     const menuId = req.query.menu_id;
     const menu = await Menu.findById(menuId);
-    if(!menu) return res.status(404).send({msg: 'No se encontro el menu requerido'});
+    if(!menu) return res.status(404).send({msg: "We coulden't find the menu"});
     return res.status(200).send({
         menu: menu,
     });
@@ -45,7 +45,7 @@ async function updateMenu(req, res){
     const menuChanges = req.body;
     const updatedMenu = await Menu.findByIdAndUpdate(id, menuChanges, {new:true});
     if (!updatedMenu) {
-        return res.json({ msg:'No se encuentra el menú que deseas modificar'})
+        return res.json({ msg:"We couldn't find the menu you want to edit"})
     }else{
     return res.json({updatedMenu});}
 };
