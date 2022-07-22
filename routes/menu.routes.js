@@ -5,7 +5,7 @@ const validationAuthenticator  = require('../middlewares/authentication');
 const adminValidation = require('../middlewares/adminValidation');
 
 api.get('/menus', menuController.getMenus);
-api.get('/menu', menuController.getMenu);
+api.get('/menu/:_id', menuController.getMenu);
 api.post('/menu/', menuController.addMenu);
 api.delete('/menu/:_id', menuController.deleteMenu);
 api.put('/menu/:_id',  menuController.updateMenu);

@@ -19,13 +19,17 @@ async function getMenus(req, res) {
    return  res.json({menusDB})
 };
 
+// async function getMenu(req, res){
+//     const menuId = req.params;
+//     const menu = await Menu.findById(menuId);
+//     if(!menu) return res.status(404).send({msg: "We coulden't find the menu"});
+//     return res.json({menu});
+// };
 async function getMenu(req, res){
-    const menuId = req.query.menu_id;
+    const menuId = req.params;
     const menu = await Menu.findById(menuId);
-    if(!menu) return res.status(404).send({msg: "We coulden't find the menu"});
-    return res.status(200).send({
-        menu: menu,
-    });
+    if(!menu) return res.status(404).send({msg: 'No se encontro el menu requerido'});
+    return res.json({menu});
 };
 
 async function deleteMenu(req, res){
