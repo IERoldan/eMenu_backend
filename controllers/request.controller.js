@@ -56,7 +56,7 @@ const putMenuCart = async (req, res) => {
     const body = req.body;
     
     // busco el menu en el carrito en
-    const menuBuscado = await Request.findById(_id);
+    const menuBuscado = await Request.findById(menuId);
 
     // si no hay query 'add' o 'del' 
     if (!query) {
@@ -65,7 +65,7 @@ const putMenuCart = async (req, res) => {
     // si esta el menu en el carrito y quiero agregar
     }else if (menuBuscado && query==="add"){
         body.amount = body.amount + 1;
-        await Request.findbyIdUpdate(menuId,body,{new:true}).then(
+        await Request.findByIdAndUpdate(menuId,body,{new:true}).then(
             (menu)=>{res.json({mensaje:`El producto ${menu.title} fue actualizado`, menu})}
             )
 
