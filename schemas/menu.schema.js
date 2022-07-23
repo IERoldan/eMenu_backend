@@ -8,6 +8,7 @@ var MenuSchema = new Schema({
     description: {type:String, required:true, maxlength:300},
     category: {type:String, ref:'Category', required:true},
     picture:{type:String, required: true,},
+    inCart: {type:Boolean, default:false}, 
 });
 
 module.exports = mongoose.model('Menu', MenuSchema);
