@@ -37,7 +37,7 @@ const addMenusCart = async (req,res)=>{
     estaEnMenu?._id,
     {inCart: true, title,picture,price},
     {new: true}
-   ).then((menu)=>{
+   ).then((menu)=>{2
     newMenuInCart.save();
     res.json({mensaje:"El menu fue agregado correctamente", menu})
    }).catch((error)=> console.log(error))
@@ -50,7 +50,7 @@ const addMenusCart = async (req,res)=>{
 }
 
 
-const putMenuCart = async (req, res) => {
+const putMenusCart = async (req, res) => {
     const {menuId} = req.params;
     const {query} = req.query;
     const body = req.body;
@@ -85,7 +85,7 @@ const putMenuCart = async (req, res) => {
 }
 
 
-const deleteMenuCart = async (req,res) => {
+const deleteMenusCart = async (req,res) => {
     const {menuId}= req.params;
 
     //busco el producto en el carrito 
@@ -106,7 +106,7 @@ const deleteMenuCart = async (req,res) => {
 module.exports = {
     getMenusCart,
     addMenusCart,
-    putMenuCart,
-    deleteMenuCart,
+    putMenusCart,
+    deleteMenusCart,
     
 }
