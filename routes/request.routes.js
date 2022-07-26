@@ -6,8 +6,10 @@ const adminValidation = require('../middlewares/adminValidation');
 
 
 api.post('/request', requestController.addRequest);
-api.get('/requests', requestController.getRequests )
-api.get('/request', requestController.getRequestByUser)
-api.get('/request', requestController.getRequestByStatus)
+api.get('/requests', requestController.getRequests );
+api.get('/request', requestController.getRequestByUser);
+api.get('/request_status', requestController.getRequestByStatus);
+api.delete('/request', requestController.deleteRequest);
+api.put('/request/:upd_id', requestController.updateRequest);
 
 module.exports = api;
