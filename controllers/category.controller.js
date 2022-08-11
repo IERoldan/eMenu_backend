@@ -36,11 +36,16 @@ async function deleteCategory(req, res){
 }
 
 async function updateCategory(req, res){
-    const id = req.params.upd_id;
-    const categoryChanges = req.body;
-    const updatedCategory = await category.findbyIdUpdate(id, categoryChanges, {new:true});
-    if (!updatedCategory) return res.status(404).send({ msg:'No se encuentra la categoría que deseas modificar'})
-    return res.status(200).send(updatedCategory);
+
+    const {categoryId} = req.params;
+    const body = req.body;
+    const updatedCategory = await Category.findByIdAndUpdate(categoryId, body, {new:true})
+        
+    if (!updatedCategory) {
+        return res.json({ msg:"No se encuentra la categoría que deseas modificar"})
+    }else{
+    return res.json({updatedCategory});}
+    
 };
 
 
