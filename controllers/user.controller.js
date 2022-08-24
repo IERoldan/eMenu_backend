@@ -52,11 +52,13 @@ async function deleteUser(req, res){
 }
 
 async function updateUser(req, res){
-    const id = req.params.upd_id;
-    const userChanges = req.body;
-    const updatedUser = await user.findByIdAndUpdate(id, userChanges, {new:true});
-    if (!updatedUser) return res.status(404).json({ msg:'No se encuentra el usuario que deseas modificar'})
-    return res.status(200).json(updatedUser);
+    const {userId} = req.params;
+    const body = req.body;
+    const updatedUser = await User.findByIdAndUpdate(userId, body, {new:true});
+    if (!updatedUser) {
+        return res.json({ msg:"We couldn't find the menu you want to edit"})
+    }else{
+    return res.json({updatedUser});}
 };
 
 async function loginUser (req, res){

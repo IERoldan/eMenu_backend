@@ -8,7 +8,7 @@ api.get('/users', userController.getUsers);
 api.get('/user', validationAuthenticator, userController.getUser);
 api.post('/user/', userController.addUser);
 api.delete('/user/:_id', userController.deleteUser);
-api.put('/user/:upd_id', validationAuthenticator, userController.updateUser);
+api.put('/user/:userId',  userController.updateUser);
 api.post('/login', userController.loginUser);
 
 module.exports = api;

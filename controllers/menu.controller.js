@@ -45,9 +45,9 @@ async function deleteMenu(req, res){
 
 
 async function updateMenu(req, res){
-    const {_id} = req.params;
-    const menuChanges = req.body;
-    const updatedMenu = await Menu.findByIdAndUpdate({_id:_id}, menuChanges, {new:true});
+    const {menuId} = req.params;
+    const body = req.body;
+    const updatedMenu = await Menu.findByIdAndUpdate(menuId, body, {new:true});
     if (!updatedMenu) {
         return res.json({ msg:"We couldn't find the menu you want to edit"})
     }else{
