@@ -5,7 +5,7 @@ const validationAuthenticator  = require('../middlewares/authentication');
 const adminValidation = require('../middlewares/adminValidation');
 
 api.get('/users', userController.getUsers);
-api.get('/user', validationAuthenticator, userController.getUser);
+api.get('/user/:_id', userController.getUser);
 api.post('/user/', userController.addUser);
 api.delete('/user/:_id', userController.deleteUser);
 api.put('/user/:userId',  userController.updateUser);

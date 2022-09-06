@@ -27,13 +27,12 @@ async function getUsers(req, res) {
 };
 
 async function getUser(req, res){
-    const userId = req.query.user_id;
+    const userId = req.params;
     const user = await User.findById(userId);
     if(!user) return res.status(404).send({msg: 'No se encontro el usuario requerido'});
-    return res.status(200).send({
-        user: user,
-    });
-};
+    return res.json({user})
+    };
+
 
 async function deleteUser(req, res){
 
