@@ -62,7 +62,7 @@ const addMenusCart = async (req, res) => {
                 mensaje: "El menu fue agregado correctamente",
                 menusCart
             })
-        }).catch((error) => console.log(error))
+        }).catch((error))
 
   
     } else if (estaEnCarrito) {

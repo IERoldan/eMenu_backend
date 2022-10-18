@@ -58,7 +58,6 @@ async function loginUser (req, res){
        const email = req.body.email;
        const password = req.body.password;
        const userDB = await User.findOne({email});
-       console.log(userDB.email, userDB.password)
        if(!userDB) return res.status(404).send({msg:'El usuario referido no existe'})
        const fitPassword = await bcrypt.compare(password, userDB.password);
        if(!fitPassword) return res.status(401).send({msg:'Alguno de los datos ingresados no es correcto'});
