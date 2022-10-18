@@ -21,9 +21,7 @@ async function addUser(req, res){
 async function getUsers(req, res) {
     const usuariosDB= await User.find();
     return res.json({usuariosDB})
-    // res.send({
-    //    users: usuariosDB,
-    // })
+
 };
 
 async function getUser(req, res){
@@ -45,10 +43,7 @@ async function deleteUser(req, res){
     }else{
         return res.json({message:"Error"})
     }
-    // const UserIdDelete = req.query.user_id_delete;
-    // const userDelete = await User.findByIdAndDelete(UserIdDelete);
-    // if (!userDelete) return res.status(404).send({msg: 'No se encontro el usuario que desea eliminar'})
-    // return res.status(200).send({ msg:`El usuario ${userDelete.email} ha sido eliminado exitosamente`})
+
 }
 
 async function updateUser(req, res){
