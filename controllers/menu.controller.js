@@ -19,12 +19,7 @@ async function getMenus(req, res) {
    return  res.json({menusDB})
 };
 
-// async function getMenu(req, res){
-//     const menuId = req.params;
-//     const menu = await Menu.findById(menuId);
-//     if(!menu) return res.status(404).send({msg: "We coulden't find the menu"});
-//     return res.json({menu});
-// };
+
 async function getMenu(req, res){
     const menuId = req.params;
     const menu = await Menu.findById(menuId);
