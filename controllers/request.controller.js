@@ -31,7 +31,6 @@ async function getRequestByUser(req,res){
         const userID = req.query.user_id;
         const requestById = await Request.find({userID});
         if(!requestById) return res.status(404).send({msg: 'El usuario referido no tiene pedidos realizados'});
-        console.log(requestById)
         return res.status(200).send({
             request: requestById
         })
@@ -46,7 +45,6 @@ async function getRequestByStatus(req, res){
         const status = req.query.status_type;
         const requestByStatus = await Request.find({status});
         if(!requestByStatus) return res.status(404).send({msg: 'No hay pedidos con ese status'});
-        console.log(requestByStatus)
         return res.status(200).send({
             request: requestByStatus,
         })
